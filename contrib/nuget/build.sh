@@ -97,9 +97,8 @@ for arch in x86 x64 ; do
     # libzstd_static.lib is built with mingw and not compatible with MSVC
     #cp -v ${arch}/static/libzstd_static.lib "${PKGDIR}/build/native/lib/win/${arch}/libzstd.lib"
 
-    cp -v ${arch}/dll/libzstd.{lib,def} "${PKGDIR}/build/native/lib/win/${arch}/"
+    cp -v ${arch}/static/libzstd_static.lib "${PKGDIR}/build/native/lib/win/${arch}/"
     cp -v ${arch}/dll/libzstd.dll "${PKGDIR}/runtimes/win-${arch}/native/"
-    cp -v ${arch}/example/zstd_errors.h "${PKGDIR}/build/native/include/"
     cp -v ${arch}/include/*.h "${PKGDIR}/build/native/include/"
 done
 
